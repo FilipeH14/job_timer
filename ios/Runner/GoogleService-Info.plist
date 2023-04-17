@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>297283280147-k2f6vrrvk8h9gqhil6flr2k8a79f8md6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.297283280147-k2f6vrrvk8h9gqhil6flr2k8a79f8md6</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB0R1SC6bFCkCRr-YVaAFtJBBM4Y-RFGTI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>297283280147</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>br.com.filipeapp.jobTimer</string>
+	<key>PROJECT_ID</key>
+	<string>fh-7-job-timer</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fh-7-job-timer.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:297283280147:ios:a2b67e36b7b7e07e380ee6</string>
+</dict>
+</plist>

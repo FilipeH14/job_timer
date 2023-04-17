@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "297283280147",
+    "project_id": "fh-7-job-timer",
+    "storage_bucket": "fh-7-job-timer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297283280147:android:b728112067dd82b6380ee6",
+        "android_client_info": {
+          "package_name": "br.com.filipeapp.job_timer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "297283280147-5g1f6pnnjmm7jdt8sv52fb48vs1iq87q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6s_6puoAX3kAGebS4Xgyl7aowje_4b7g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "297283280147-5g1f6pnnjmm7jdt8sv52fb48vs1iq87q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
