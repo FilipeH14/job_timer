@@ -7,7 +7,20 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('splash page')),
-      body: Container(),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8),
+            child: TextFormField(
+              decoration: const InputDecoration(label: Text('input xxx')),
+            ),
+          ),
+          ElevatedButton(
+            child: const Text('Botão'),
+            onPressed: () {},
+          )
+        ],
+      ),
     );
   }
 }
