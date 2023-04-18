@@ -7,22 +7,16 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('splash page')),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8),
-            child: TextFormField(
-              decoration: const InputDecoration(label: Text('input xxx')),
-            ),
-          ),
-          ElevatedButton(
-            child: const Text('Botão'),
-            onPressed: () {},
-          ),
-          const Icon(JobTimerIcons.ok_circled2, size: 50),
-          const Icon(JobTimerIcons.angle_double_right, size: 50),
-        ],
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(colors: [
+            Color(0XFF0092B9),
+            Color(0XFF0167B2),
+          ]),
+        ),
+        child: Center(
+          child: Image.asset('assets/images/logo.png'),
+        ),
       ),
     );
   }
