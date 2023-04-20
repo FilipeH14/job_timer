@@ -14,9 +14,15 @@ class LoginController extends Cubit<LoginState> {
         super(const LoginState.initial());
 
   Future<void> signIn() async {
-    emit(state.copyWith(status: LoginStatus.loading));
-
-    Future.delayed(const Duration(seconds: 2),
-        () => emit(state.copyWith(status: LoginStatus.initial)));
+    try {
+      emit(state.copyWith(status: LoginStatus.loading));
+      await _authService.signIn();
+    } on Exception catch (e, s) {
+      log('Erro ao realizar login', error: e, stackTrace: s);
+      emit(state.copyWith(
+        status: LoginStatus.failure,
+        errorMessage: 'Erro ao realizar login'
+      ));
+    }
   }
 }
