@@ -21,7 +21,7 @@ class LoginController extends Cubit<LoginState> {
       log('Erro ao realizar login', error: e, stackTrace: s);
       emit(state.copyWith(
         status: LoginStatus.failure,
-        errorMessage: 'Erro ao realizar login'
+        errorMessage: 'Erro ao realizar login',
       ));
     }
   }
