@@ -4,7 +4,7 @@ import 'package:isar/isar.dart';
 
 @Collection()
 class ProjectTask {
-  // @Id()
+  @Id()
   int? id;
   late String name;
   late int duration;
