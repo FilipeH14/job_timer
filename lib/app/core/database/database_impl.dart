@@ -10,7 +10,7 @@ class DatabaseImpl implements Database {
     if (_databaseInterface == null) {
       final dir = await getApplicationSupportDirectory();
       _databaseInterface = await Isar.open(
-        schemas: [],
+        [],
         directory: dir.path,
         inspector: true,
       );
