@@ -21,6 +21,8 @@ class HomePage extends StatelessWidget {
               final db = Modular.get<Database>();
               final connection = await db.openConnection();
 
+              await connection.writeTxn(() => connection.clear());
+
               connection.writeTxn(() {
                 var project = Project();
                 project.name = 'Projeto teste';
