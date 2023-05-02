@@ -9,14 +9,14 @@ class ProjectModel {
   final String name;
   final int estimate;
   final ProjectStatus status;
-  final List<ProjectTaskModel> task;
+  final List<ProjectTaskModel> tasks;
 
   ProjectModel({
     this.id,
     required this.name,
     required this.estimate,
     required this.status,
-    required this.task,
+    required this.tasks,
   });
 
   factory ProjectModel.fromEntity(Project project) {
@@ -28,7 +28,7 @@ class ProjectModel {
       name: project.name,
       estimate: project.estimate,
       status: project.status,
-      task: project.tasks.map((e) => ProjectTaskModel.fromEntity(e)).toList(),
+      tasks: project.tasks.map((e) => ProjectTaskModel.fromEntity(e)).toList(),
     );
   }
 }

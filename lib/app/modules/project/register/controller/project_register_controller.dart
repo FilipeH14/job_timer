@@ -22,7 +22,7 @@ class ProjectRegisterController extends Cubit<ProjectRegisterStatus> {
         name: name,
         estimate: estimate,
         status: ProjectStatus.emAndamento,
-        task: [],
+        tasks: [],
       );
 
       await _projectsService.register(project);
