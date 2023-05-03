@@ -66,7 +66,7 @@ class _ProjectProgress extends StatelessWidget {
 
     var percent = 0.0;
 
-    if(totalTasks > 0) {
+    if (totalTasks > 0) {
       percent = totalTasks / projectModel.estimate;
     }
 

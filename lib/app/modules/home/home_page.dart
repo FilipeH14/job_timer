@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               SliverPersistentHeader(
-                delegate: HeaderProjectsMenu(),
+                delegate: HeaderProjectsMenu(controller: controller),
                 pinned: true,
               ),
               BlocSelector<HomeController, HomeState, bool>(
@@ -69,8 +69,9 @@ class HomePage extends StatelessWidget {
                 bloc: controller,
                 selector: (state) => state.projects,
                 builder: (context, projects) => SliverList(
-                  delegate: SliverChildListDelegate(
-                      projects.map((project) => ProjectTile(projectModel: project)).toList()),
+                  delegate: SliverChildListDelegate(projects
+                      .map((project) => ProjectTile(projectModel: project))
+                      .toList()),
                 ),
               ),
             ],
