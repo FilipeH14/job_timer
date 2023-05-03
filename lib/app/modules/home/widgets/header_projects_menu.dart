@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:job_timer/app/entities/project_status.dart';
@@ -22,6 +24,7 @@ class HeaderProjectsMenu extends SliverPersistentHeaderDelegate {
                   SizedBox(
                     width: constraints.maxWidth * .5,
                     child: DropdownButtonFormField<ProjectStatus>(
+                      value: ProjectStatus.emAndamento,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20),
@@ -35,7 +38,11 @@ class HeaderProjectsMenu extends SliverPersistentHeaderDelegate {
                                 child: Text(e.label),
                               ))
                           .toList(),
-                      onChanged: (value) {},
+                      onChanged: (status) {
+                        if (status != null) {
+                          controller.filter(status);
+                        }
+                      },
                     ),
                   ),
                   SizedBox(
