@@ -81,17 +81,6 @@ class _ProjectRegisterPageState extends State<ProjectRegisterPage> {
                   ]),
                 ),
                 const SizedBox(height: 10),
-                BlocSelector<ProjectRegisterController, ProjectRegisterStatus,
-                    bool>(
-                  bloc: widget.controller,
-                  selector: (state) => state == ProjectRegisterStatus.loading,
-                  builder: (context, showLoading) => Visibility(
-                    visible: showLoading,
-                    child: const Center(
-                      child: CircularProgressIndicator.adaptive(),
-                    ),
-                  ),
-                ),
                 SizedBox(
                   width: MediaQuery.of(context).size.width,
                   height: 49,
