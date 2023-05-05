@@ -8,7 +8,7 @@ import 'package:job_timer/app/view_models/project_model.dart';
 part 'project_register_state.dart';
 
 class ProjectRegisterController extends Cubit<ProjectRegisterStatus> {
-  ProjectsService _projectsService;
+  final ProjectsService _projectsService;
 
   ProjectRegisterController({required ProjectsService projectsService})
       : _projectsService = projectsService,
@@ -25,9 +25,12 @@ class ProjectRegisterController extends Cubit<ProjectRegisterStatus> {
         tasks: [],
       );
 
-      await _projectsService.register(project);
+      // await _projectsService.register(project);
 
-      emit(ProjectRegisterStatus.success);
+      // emit(ProjectRegisterStatus.success);
+
+      await Future.delayed(const Duration(seconds: 2));
+      emit(ProjectRegisterStatus.initial);
     } catch (e, s) {
       log('Erro ao salvar projeto', error: e, stackTrace: s);
       emit(ProjectRegisterStatus.failure);
