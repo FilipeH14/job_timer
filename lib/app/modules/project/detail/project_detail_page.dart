@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:job_timer/app/modules/project/detail/widgets/project_detail_appbar.dart';
 
 class ProjectDetailPage extends StatelessWidget {
   const ProjectDetailPage({super.key});
@@ -6,8 +7,11 @@ class ProjectDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('')),
-      body: Container(),
+      body: CustomScrollView(
+        slivers: [
+          ProjectDetailAppbar(),
+        ],
+      ),
     );
   }
 }
