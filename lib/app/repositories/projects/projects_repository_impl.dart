@@ -5,6 +5,7 @@ import 'package:job_timer/app/core/database/database.dart';
 import 'package:job_timer/app/core/exeptions/failure.dart';
 import 'package:job_timer/app/entities/project.dart';
 import 'package:job_timer/app/entities/project_status.dart';
+import 'package:job_timer/app/entities/project_task.dart';
 import 'package:job_timer/app/repositories/projects/projects_repository.dart';
 
 class ProjectsRepositoryImpl implements ProjectsRepository {
@@ -33,5 +34,31 @@ class ProjectsRepositoryImpl implements ProjectsRepository {
         await connection.projects.filter().statusEqualTo(status).findAll();
 
     return projects;
+  }
+
+  @override
+  Future<Project> findById(int projectId) async {
+    final connection = await _database.openConnection();
+
+    final project = await connection.projects.get(projectId);
+
+    if (project == null) {
+      throw Failure(message: 'Projeto não encontrado');
+    }
+
+    return project;
+  }
+
+  @override
+  Future<Project> addTask(int projectId, ProjectTask task) async {
+    final connection = await _database.openConnection();
+
+    final project = await findById(projectId);
+
+    project.tasks.add(task);
+
+    connection.writeTxn(() => project.tasks.save());
+
+    return project;
   }
 }
