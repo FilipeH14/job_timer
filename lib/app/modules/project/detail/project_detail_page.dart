@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:job_timer/app/core/ui/job_timer_icons.dart';
+import 'package:job_timer/app/modules/project/detail/controller/project_detail_controller.dart';
 import 'package:job_timer/app/modules/project/detail/widgets/project_detail_appbar.dart';
 import 'package:job_timer/app/modules/project/detail/widgets/project_pie_chart.dart';
 import 'package:job_timer/app/modules/project/detail/widgets/project_task_tile.dart';
 
 class ProjectDetailPage extends StatelessWidget {
-  const ProjectDetailPage({super.key});
+  final ProjectDetailController controller;
+
+  const ProjectDetailPage({
+    required this.controller,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
