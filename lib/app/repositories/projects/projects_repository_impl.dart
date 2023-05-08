@@ -37,6 +37,22 @@ class ProjectsRepositoryImpl implements ProjectsRepository {
   }
 
   @override
+  Future<Project> addTask(int projectId, ProjectTask task) async {
+    final connection = await _database.openConnection();
+
+    final project = await findById(projectId);
+
+    await connection.writeTxn(() async {
+      await connection.projectTasks.put(task);
+      project.tasks.add(task);
+
+      return project.tasks.save();
+    });
+
+    return project;
+  }
+
+  @override
   Future<Project> findById(int projectId) async {
     final connection = await _database.openConnection();
 
@@ -45,19 +61,6 @@ class ProjectsRepositoryImpl implements ProjectsRepository {
     if (project == null) {
       throw Failure(message: 'Projeto não encontrado');
     }
-
-    return project;
-  }
-
-  @override
-  Future<Project> addTask(int projectId, ProjectTask task) async {
-    final connection = await _database.openConnection();
-
-    final project = await findById(projectId);
-
-    project.tasks.add(task);
-
-    connection.writeTxn(() => project.tasks.save());
 
     return project;
   }

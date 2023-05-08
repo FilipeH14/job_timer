@@ -14,5 +14,7 @@ class Project {
   @enumerated
   late ProjectStatus status;
   
-  final tasks = IsarLinks<ProjectTask>();  
+  final tasks = IsarLinks<ProjectTask>();
+
+  late String userId;  
 }

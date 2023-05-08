@@ -1,5 +1,7 @@
 import 'dart:developer';
 
+import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:job_timer/app/entities/project_status.dart';
 import 'package:job_timer/app/services/projects/projects_service.dart';
