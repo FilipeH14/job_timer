@@ -41,7 +41,9 @@ class ProjectDetailPage extends StatelessWidget {
                 return _buildProjectDetail(context, projectModel);
               }
 
-              return const Center(child: Text('Erro ao carregar projeto'));
+              return const Center(
+                child: Text('Erro ao carregar projeto'),
+              );
           }
         },
       ),
