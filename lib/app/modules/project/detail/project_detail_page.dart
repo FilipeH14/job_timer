@@ -57,7 +57,10 @@ class ProjectDetailPage extends StatelessWidget {
             [
               const Padding(
                 padding: EdgeInsets.only(top: 50, bottom: 50),
-                child: ProjectPieChart(),
+                child: ProjectPieChart(
+                  projectEstimate: 200,
+                  totalTasks: 20,
+                ),
               ),
               const ProjectTaskTile(),
               const ProjectTaskTile(),
