@@ -2,6 +2,7 @@ import 'package:asuka/asuka.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:job_timer/app/core/ui/job_timer_icons.dart';
+import 'package:job_timer/app/entities/project_status.dart';
 import 'package:job_timer/app/modules/project/detail/controller/project_detail_controller.dart';
 import 'package:job_timer/app/modules/project/detail/widgets/project_detail_appbar.dart';
 import 'package:job_timer/app/modules/project/detail/widgets/project_pie_chart.dart';
@@ -79,10 +80,13 @@ class ProjectDetailPage extends StatelessWidget {
             alignment: Alignment.bottomRight,
             child: Padding(
               padding: const EdgeInsets.all(15),
-              child: ElevatedButton.icon(
-                icon: const Icon(JobTimerIcons.ok_circled2),
-                label: const Text('Finalizar Projeto'),
-                onPressed: () {},
+              child: Visibility(
+                visible: projectModel.status != ProjectStatus.finalizado,
+                child: ElevatedButton.icon(
+                  icon: const Icon(JobTimerIcons.ok_circled2),
+                  label: const Text('Finalizar Projeto'),
+                  onPressed: () => controller.finishedProject(),
+                ),
               ),
             ),
           ),
