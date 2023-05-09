@@ -67,11 +67,9 @@ class ProjectDetailPage extends StatelessWidget {
                   totalTasks: totalTask,
                 ),
               ),
-              const ProjectTaskTile(),
-              const ProjectTaskTile(),
-              const ProjectTaskTile(),
-              const ProjectTaskTile(),
-              const ProjectTaskTile(),
+              ...projectModel.tasks
+                  .map((task) => ProjectTaskTile(task: task))
+                  .toList()
             ],
           ),
         ),
