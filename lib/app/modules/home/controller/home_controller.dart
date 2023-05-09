@@ -32,7 +32,7 @@ class HomeController extends Cubit<HomeState> {
       emit(state.copyWith(status: HomeStatus.loading, projects: []));
 
       final projects = await _projectsService.findByStatus(status);
-      
+
       emit(state.copyWith(
         status: HomeStatus.complete,
         projects: projects,
@@ -43,4 +43,6 @@ class HomeController extends Cubit<HomeState> {
       emit(state.copyWith(status: HomeStatus.failure));
     }
   }
+
+  void updateList() => filter(state.projectFilter);
 }
