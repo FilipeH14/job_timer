@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:job_timer/app/entities/project_status.dart';
+import 'package:job_timer/app/modules/project/detail/controller/project_detail_controller.dart';
 import 'package:job_timer/app/view_models/project_model.dart';
 
 class ProjectDetailAppbar extends SliverAppBar {
@@ -80,8 +81,10 @@ class _NewTasks extends StatelessWidget {
           const Text('Adicionar Task'),
         ],
       ),
-      onTap: () =>
-          Modular.to.pushNamed('/project/task', arguments: projectModel),
+      onTap: () async {
+        await Modular.to.pushNamed('/project/task', arguments: projectModel);
+        Modular.get<ProjectDetailController>().updateProject();
+      },
     );
   }
 }
